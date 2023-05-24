@@ -42,20 +42,21 @@ class PostController extends Controller
         return view('posts.edit', compact('categories','post'));
     }
 
-    // public function update(Request $request, $id){
-    //     $categories = Category::find($id);
-    //     $category->update([
-    //         'name' => $request->name,
-    //         'slug' =>Str::slug($request->name)
-    //     ]);
+    public function update(Request $request, $id){
+        $post = Post::whereId($id)->first();
+        $post->update([
+            'title' => $request->title,
+            'slug' => Str::slug($request->title),
+            'body' => $request->body,
+        ]);
 
-    //     return redirect('/dashboard/category');
-    // }
+        return redirect('/dashboard/posts');
+    }
 
-    // public function destroy($id) {
-    //     $categories = Category::find($id);
-    //     $category = Category::where('id', $id)->delete();
+    public function destroy($id) {
+        $post = Post::find($id);
+        $post = Post::where('id', $id)->delete();
         
-    //     return redirect('/dashboard/category');
-    // }
+        return redirect('/dashboard/posts');
+    }
 }

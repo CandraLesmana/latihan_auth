@@ -53,7 +53,7 @@
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                             <a class="dropdown-item" href="/dashboard/posts/edit/{{ $post->id }}">
                                             <i class="fa fa-edit pr-2 text-primary"></i>Edit</a>
-                                            <a class="dropdown-item" href=""
+                                            <a class="dropdown-item" href="/dashboard/posts/delete/{{ $post->id }}"
                                             onclick="return confirm('apakah adna yakin? Data akan dihapus!')">
                                             <i class="fa fa-trash pr-2 text-danger"></i>Delete</a>
                                         </div>

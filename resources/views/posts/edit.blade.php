@@ -42,14 +42,19 @@
                     <div class="col-md-6">
                         <label for="validationDefault04">Category</label>
                         <select class="custom-select" name="category_id" id="validationDefault04" required>
-                            <option selected disabled value="">Choose...</option>
+
+                            <option selected value=" {{ $post->category_id }}">
+                            {{ $post->category->name ?? '' }}
+                            </option>
+
+                            <option disabled value="">Choose...</option>
                             @foreach($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row justify-content-center">
                     <textarea name="body" rows="5" class="summernote form-control">{{ $post->body }}</textarea>
                 </div>
                 <button type="submit" class="btn btn-primary mt-3">Simpan</button>
