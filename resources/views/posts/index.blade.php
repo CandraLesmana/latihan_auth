@@ -18,7 +18,7 @@
     <div class="card shadow mb-4">
         <div class="card-body">
         <a href="{{route('posts.create')}}" class="btn btn-primary mb-3 px-4">
-            <i class="fa fa-plus"></i>
+            <i class="fa fa-plus mr-2"></i>
             Buat Post
         </a>
             <div class="table-responsive">
